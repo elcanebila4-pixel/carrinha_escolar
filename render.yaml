@@ -3,6 +3,7 @@ services:
     name: carrinha-escolar-api
     runtime: docker
     plan: free
+    region: singapore
     dockerfilePath: ./Dockerfile.api
     dockerContext: .
     healthCheckPath: /health
