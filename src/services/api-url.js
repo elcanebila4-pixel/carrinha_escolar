@@ -1,5 +1,5 @@
 const configuredApiBase = String(
-  import.meta.env.VITE_API_BASE_URL || '/api'
+  import.meta.env.VITE_API_BASE_URL || 'https://carrinha-escolar.onrender.com/api'
 ).replace(/\/+$/, '')
 
 export function apiUrl(path) {
