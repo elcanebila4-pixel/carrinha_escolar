@@ -45,7 +45,9 @@ os dados ficam na base gerida, não no armazenamento temporário do serviço web
    dados do TiDB. `DB_PORT` deve ser `4000` e `DB_SSL` deve permanecer `true`.
    `DB_USER` é o nome completo fornecido pelo TiDB, incluindo o prefixo da
    instância. O Node.js verifica TLS a partir da versão 1.2; `DB_SSL_CA` é
-   opcional para TiDB Cloud Starter. O Render define `PORT` automaticamente.
+   opcional para TiDB Cloud Starter. Se precisar defini-lo, use o conteúdo PEM
+   do certificado, não um caminho de ficheiro local. O Render define `PORT`
+   automaticamente.
 4. Depois do deploy, abra `https://<nome-do-serviço>.onrender.com/health`.
    Uma resposta `{"ok":true,"database":"connected"}` confirma que a API e a
    ligação à base de dados estão acessíveis.
