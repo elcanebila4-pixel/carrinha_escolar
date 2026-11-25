@@ -1,0 +1,41 @@
+// Shared visual foundation for the Rota+ product.
+:root {
+  color-scheme: light;
+  --ink: #20352e;
+  --muted: #718178;
+  --line: #e5ebe6;
+  --canvas: #f5f7f4;
+  --surface: #fff;
+  --brand: #244f42;
+  --brand-soft: #edf4e7;
+  --lime: #cde982;
+  --shadow-soft: 0 12px 36px rgb(30 58 45 / 7%);
+}
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Inter, "Aptos", "Segoe UI", Roboto, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #94b75a; outline-offset: 3px; }
+.q-btn { transition: background-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease; }
+.q-btn:active { transform: scale(.98); }
+.q-field--outlined .q-field__control { border-radius: 12px; }
+.q-field--outlined .q-field__control:before { border-color: #dfe7e1; }
+.q-field--outlined.q-field--focused .q-field__control:after { border-width: 2px; }
+.q-card { box-shadow: 0 3px 14px rgb(29 57 43 / 4%); }
+.q-dialog__backdrop { backdrop-filter: blur(3px); }
+::selection { color: #173c30; background: #dcefad; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

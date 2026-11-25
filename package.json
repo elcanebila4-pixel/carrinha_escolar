@@ -1,0 +1,52 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A Quasar Project",
+  "keywords": [
+    "quasar",
+    "quasar-app",
+    "quasar-app-vite",
+    "quasar-cli",
+    "vite",
+    "vue",
+    "vuejs"
+  ],
+  "author": "Americo Barrozo <barrozoamerico3@GMAIL.COM>",
+  "type": "module",
+  "scripts": {
+    "lint": "oxfmt && oxlint --fix",
+    "lint:check": "oxfmt --check && oxlint",
+    "dev": "quasar dev",
+    "auth:server": "node backend/auth-server.js",
+    "auth:create-admin": "node backend/create-admin.js",
+    "build": "quasar build",
+    "postinstall": "quasar prepare --silent"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@quasar/extras": "^2.1.0",
+    "axios": "^1.20.0",
+    "dotenv": "^18.0.6",
+    "leaflet": "^1.9.4",
+    "mysql2": "^3.24.5",
+    "quasar": "^2.33.1",
+    "vue": "^3.5.22",
+    "vue-router": "^5.0.6"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^3.10.0",
+    "@types/leaflet": "^1.9.22",
+    "autoprefixer": "^10.4.27",
+    "oxfmt": "^0.x",
+    "oxlint": "^1.x",
+    "postcss": "^8.5.8",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">= 26 || ^24 || ^22.12"
+  },
+  "productName": "Quasar App"
+}

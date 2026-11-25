@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: carrinha-escolar-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.api
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "4000"
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL
+        value: "true"
+      - key: CORS_ORIGINS
+        value: https://carrinha-escolar-web.onrender.com
+  - type: web
+    name: carrinha-escolar-web
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist/spa
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://carrinha-escolar-api.onrender.com/api
