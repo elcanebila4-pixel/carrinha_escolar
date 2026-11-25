@@ -1213,7 +1213,8 @@ const server = createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost')
 
     if (request.method === 'GET' && url.pathname === '/health') {
-      return sendJson(response, 200, { ok: true })
+      await query('SELECT 1')
+      return sendJson(response, 200, { ok: true, database: 'connected' })
     }
 
     /*
